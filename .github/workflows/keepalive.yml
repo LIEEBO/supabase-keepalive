@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Insert heartbeat row
         run: |
-          curl -X POST "https://pdenhgnxrgngwqtrmhk.supabase.co/rest/v1/heartbeat" \
+          curl -X POST "https://pdenhgnxrgngwvqtrmhk.supabase.co/rest/v1/heartbeat" \
           -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkZW5oZ254cmduZ3d2cXRybWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwNDUwODUsImV4cCI6MjA5NzYyMTA4NX0.RUPqVRCE-sLsFJT64SuiWhtLvC_bho3Po4dTDlnKrgI" \
           -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFub24iLCJpYXQiOjE3ODIwNDUwODUsImV4cCI6MjA5NzYyMTA4NX0.RUPqVRCE-sLsFJT64SuiWhtLvC_bho3Po4dTDlnKrgI" \
           -H "Content-Type: application/json" \
