@@ -14,3 +14,8 @@ jobs:
           -H "Content-Type: application/json" \
           -H "Prefer: return=minimal" \
           -d '{}'
+
+      - name: Clean up old heartbeat rows
+        run: |
+          curl -f -X DELETE "https://pdenhgnxrgngwvqtrmhk.supabase.co/rest/v1/heartbeat?created_at=lt.$(date -u -d '30 days ago' +%Y-%m-%dT%H:%M:%SZ)" \
+          -H "apikey: sb_publishable_8dXTbX_NtNVAdnAxHJweRg_EBK2T0kj"
