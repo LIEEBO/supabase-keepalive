@@ -1,20 +1,16 @@
 name: Supabase Keep Alive
-
 on:
   schedule:
-    - cron: "0 2 * * *"  # 每天一次
+    - cron: "0 2 * * *"
   workflow_dispatch:
-
 jobs:
   heartbeat:
     runs-on: ubuntu-latest
-
     steps:
       - name: Insert heartbeat row
         run: |
-          curl -X POST "https://pdenhgnxrgngwvqtrmhk.supabase.co/rest/v1/heartbeat" \
-          -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkZW5oZ254cmduZ3d2cXRybWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwNDUwODUsImV4cCI6MjA5NzYyMTA4NX0.RUPqVRCE-sLsFJT64SuiWhtLvC_bho3Po4dTDlnKrgI" \
-          -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFub24iLCJpYXQiOjE3ODIwNDUwODUsImV4cCI6MjA5NzYyMTA4NX0.RUPqVRCE-sLsFJT64SuiWhtLvC_bho3Po4dTDlnKrgI" \
+          curl -f -X POST "https://pdenhgnxrgngwvqtrmhk.supabase.co/rest/v1/heartbeat" \
+          -H "apikey: sb_publishable_8dXTbX_NtNVAdnAxHJweRg_EBK2T0kj" \
           -H "Content-Type: application/json" \
           -H "Prefer: return=minimal" \
           -d '{}'
